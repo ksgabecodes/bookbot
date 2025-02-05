@@ -23,10 +23,16 @@ def main():
     counted_characters={}
     with open("books/frankenstein.txt") as f:
         book_contents = f.read()
-    print(book_contents)
-    print(count_words(book_contents))
+#    print(book_contents)
+    
     counted_characters=count_characters(book_contents)
-    print(counted_characters)
+    print("----- Begin report of books/frankenstein.txt -----")
+    print(f"{count_words(book_contents)} words found in the document")
+    print("\n")
+    for c in counted_characters:
+        if c.isalpha():
+            print(f"The '{c}' character was found {counted_characters.get(c)} times")
+
     return
 
 
